@@ -4,21 +4,21 @@
 //Rounds angle to nearest tenths place
 float roundToTenthsPlace(float angle){
     //Implementation of rounding without math.h (not sure if math.h is allowed)
-    int newAngleInt = (int)(newAngle * 10);
-    double newAngleDouble = newAngleInt/10.0;
+    int angleInt = (int)(angle * 10);
+    double angleDouble = angleInt/10.0;
 
     //Checks if original angles hundredth place is >= 0.05 i.e. 12.43 - 12.4 = 0.03 < 0.05
-    if (newAngle - newAngleDouble >= 0.05)
+    if (angle - angleDouble >= 0.05)
     {
-        newAngleInt = newAngleInt += 1;
-        newAngle = newAngleInt / 10.0;
+        angleInt += 1;
+        angle = angleInt / 10.0;
     }
     else
     {
-        newAngle = newAngleInt / 10;
+        angle = angleInt / 10;
     }
 
-    return newAngle;
+    return angle;
 }
 
 //Returns the same angle but now between 0 and 360
